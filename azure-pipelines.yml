@@ -13,7 +13,10 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(build.sourcesDirectory)'
-    Contents: '**'
+    Contents: |
+      **/*.js
+      **/*.html
+      **/*.css
     TargetFolder: '$(build.ArtifactStagingDirectory)'
 - task: PublishPipelineArtifact@1
   inputs:
